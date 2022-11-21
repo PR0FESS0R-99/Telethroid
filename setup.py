@@ -8,14 +8,14 @@ with open('PyClient/__init__.py') as fp:
     version = re.search('__version__ = "(.+?)"', fp.read())[1]
 
 setuptools.setup(
-    name="PyClient",
+    name="py-client",
     version=version,
     author="Muhammed RK",
     author_email="muhammedmotech@gmail.com",
     license="MLT",
     description="Symbol Programming Language",
     long_description_content_type="text/markdown",
-    url="https://github.com/PR0FESS0R-99/PyClient",
+    url="https://github.com/PR0FESS0R-99/py-client",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
@@ -23,6 +23,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires='~=3.7',
-    py_modules=["PyClient"],
+    py_modules=["py-client"],
     install_requires=requirements,
 )
