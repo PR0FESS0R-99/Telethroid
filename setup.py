@@ -4,7 +4,7 @@ import setuptools
 with open('requirements.txt') as fp:
     requirements = [line.strip() for line in fp]
 
-with open('PyroPath/version.py') as fp:
+with open('PyroPath/pyro_status.py') as fp:
     version = re.search('__version__ = "(.+?)"', fp.read())[1]
 
 setuptools.setup(
