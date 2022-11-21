@@ -1,2 +1,0 @@
-Pyrogram>=2.0.16
-asyncio~=3.4.3
