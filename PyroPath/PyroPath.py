@@ -1,4 +1,4 @@
-from .Midukki import *
+from .midukki import *
 
 class PyClient:
     # Midukki
