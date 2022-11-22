@@ -9,6 +9,7 @@ setuptools.setup(
       package_data={
         "PyroPath",
       },
-      zip_safe=False,
+      url="https://github.com/Pr0fess0r-99",
+      download_url="https://github.com/Pr0fess0r-99/PyroPath", 
       packages=['PyroPath'],
 )
