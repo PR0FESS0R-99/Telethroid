@@ -7,7 +7,7 @@ setuptools.setup(
     license='MIT License',
     description='Just a simple Python package. Created By @Pr0fess0r_99',                           
     package_data={
-      "PyroPath",
+      "PyroPath": ["py.typed"],
     },
     url="https://github.com/PR0FESS0R-99/PyroPath",
     packages=setuptools.find_packages(),
