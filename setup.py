@@ -7,7 +7,7 @@ setuptools.setup(
       license='MIT License',
       description='Just a simple Python package. Created By @Pr0fess0r_99',                           
       package_data={
-        "pyrogram": ["py.typed"],
+        "PyroPath",
       },
       zip_safe=False,
       packages=['PyroPath'],
