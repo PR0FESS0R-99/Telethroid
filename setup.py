@@ -9,6 +9,7 @@ setuptools.setup(
     package_data={
       "PyroPath",
     },
+    url="https://github.com/PR0FESS0R-99/PyroPath",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
