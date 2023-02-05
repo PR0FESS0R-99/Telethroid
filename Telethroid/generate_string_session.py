@@ -1,6 +1,6 @@
 import asyncio
 
-async def generate_string_session(pyrogram, api_id=False, api_hash=False, out_put="PHONE_NUMBER"): # PHONE_NUMBER or BOT_TOKEN
+async def generate_string_session(pyrogram, api_id=False, api_hash=False, mode="PHONE_NUMBER"): # PHONE_NUMBER or BOT_TOKEN
   async def main():
     
     if api_id & api_hash == False:
