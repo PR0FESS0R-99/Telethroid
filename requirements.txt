@@ -1,2 +1,1 @@
-pyrogram==2.0.92
-tgcrypto==1.2.5
+asyncio==3.4.3
