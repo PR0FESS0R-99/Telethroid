@@ -1,7 +1,7 @@
 import asyncio
 
-async def generate_string_session(pyrogram, api_id=False, api_hash=False, mode="PHONE_NUMBER"): # PHONE_NUMBER or BOT_TOKEN
-  async def main():
+def generate_string_session(pyrogram, api_id=False, api_hash=False, mode="PHONE_NUMBER"): # PHONE_NUMBER or BOT_TOKEN
+  def main():
     
     if api_id & api_hash == False:
       api_id = input("Enter your teegram API_ID")
@@ -13,7 +13,7 @@ async def generate_string_session(pyrogram, api_id=False, api_hash=False, mode="
       print(f"Error {e}")
       return
 
-    async with app:
+    with app:
       s = await app.export_session_string()
 
       if out_put == "PHONE_NUMBER":
