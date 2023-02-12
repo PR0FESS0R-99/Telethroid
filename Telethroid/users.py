@@ -7,10 +7,10 @@ def anonymous_first_name(message):
 def anonymous_last_name(message):
   return message.from_user.last_name  if message.from_user else None
 
-def anonymous_username (message):
+def anonymous_username(message):
   return message.from_user.username  if message.from_user else None
 
-def anonymous_language_codemessage):
+def anonymous_language_code(message):
   return message.from_user.language_code if message.from_user else None
 
 def anonymous_dc_id(message):
