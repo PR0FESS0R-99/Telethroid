@@ -10,6 +10,3 @@ def start_telethroid():
     "Telethroid Successfully Installed" + "\n"
     f"Version : {__version__}"
   )
-
-  
-  
