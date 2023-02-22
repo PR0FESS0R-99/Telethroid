@@ -1,21 +1,21 @@
 class User(object):
-    def ID(message):
-        return message.from_user.id if message.from_user else None
+    def id(message):
+        return message.from_user.id
 
-    def FIRST(message):
-      return message.from_user.first_name if message.from_user else None
+    def first(message):
+      return message.from_user.first_name
 
-    def LAST(message):
-      return message.from_user.last_name  if message.from_user else None
+    def last(message):
+      return message.from_user.last_name
 
-    def USERNAME(message):
-      return message.from_user.username  if message.from_user else None
+    def username(message):
+      return message.from_user.username
 
-    def LANG_CODE(message):
-      return message.from_user.language_code if message.from_user else None
+    def lang_code(message):
+      return message.from_user.language_code
 
-    def DC_ID(message):
-      return message.from_user.dc_id if message.from_user else None
+    def dc_id(message):
+      return message.from_user.dc_id
 
-    def MENTION(message):
-      return message.from_user.mention if message.from_user else None
+    def mention(message):
+      return message.from_user.mention
