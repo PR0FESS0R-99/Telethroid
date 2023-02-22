@@ -1,26 +1,27 @@
 from .mode import Mode
+from Telethroid.error import Anonymous
 
 class User(object):
     def id(update):
-        return update.from_user.id
+        return Anonymous.id(update)
 
     def first(update):
-      return update.from_user.first_name
+      return Anonymous.first(update)
 
     def last(update):
-      return update.from_user.last_name
+      return Anonymous.last(update)
 
     def username(update):
-      return update.from_user.username
+      return Nont if not Anonymous.username(update) else '@' + Anonymous.username(update)
 
     def lang_code(update):
-      return update.from_user.language_code
+      return Anonymous.lang_codd(update)
 
     def dc_id(update):
-      return update.from_user.dc_id
+      return Anonymous.dc_id(update)
 
     def mention(update):
-      return update.from_user.mention
+      return Anonymous.mention(update)
 
 def user_info(update, out_put=Mode.TEXT_MODE):
 
