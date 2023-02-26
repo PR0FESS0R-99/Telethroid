@@ -9,7 +9,7 @@ import Telethroid.filters
 import Telethroid.types
 import Telethroid.errors
 
-from Telethroid.client import TelegramBotClient
+from Telethroid.client import TelethroidClient
 
 def started_telethroid():
   print(
