@@ -11,7 +11,7 @@ import urllib.parse
 import urllib.request
 
 
-class TelegramBotClient:
+class TelethroidClient:
     def __init__(self, api_id: int, api_hash: str, bot_token: str, string_session: str, phone_code: str, device_model: str):
         self.api_id = api_id
         self.api_hash = api_hash
