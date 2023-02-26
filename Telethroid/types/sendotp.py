@@ -1,7 +1,7 @@
 import random
 from Telethroid import TelethroidClient
 
-class SENDOTP:
+class SendOTP:
     def __init__(self, telethroid_client: TelethroidClient):
         self.telethroid_client = telethroid_client
     
