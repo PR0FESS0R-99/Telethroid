@@ -162,3 +162,18 @@ class Filter:
     def delete_channel(message):
         """Filters updates where a channel has been deleted."""
         return message.chat and message.chat.type == 'channel' and message.delete_chat_photo
+
+    @staticmethod
+    def command(cmd: str, prefix: str = '/') -> bool:
+        def func(message: dict) -> bool:
+            if 'text' not in message:
+                return False
+            text = message['text'].strip()
+            if not text.startswith(prefix):
+                return False
+            parts = text.split(' ')
+            if len(parts) == 0:
+                return False
+            return parts[0][len(prefix):] == cmd
+        return func
+
