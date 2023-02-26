@@ -31,4 +31,20 @@ def text_handler(update):
         send_message(update['message']['chat']['id'], f"You said: {update['message']['text']}")
 
 
+class telethroidfilter:
+    @staticmethod
+    def command(cmd: str, prefix: str = '/') -> bool:
+        def func(message: dict) -> bool:
+            if 'text' not in message:
+                return False
+            text = message['text'].strip()
+            if not text.startswith(prefix):
+                return False
+            parts = text.split(' ')
+            if len(parts) == 0:
+                return False
+            return parts[0][len(prefix):] == cmd
+        return func
+
+
 
