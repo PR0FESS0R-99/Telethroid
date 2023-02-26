@@ -1,3 +1,6 @@
+#  Telethroid - Telegram BoT Library for Python
+#  Copyright (C) 2023-present Pr0fess0r-99 <https://github.com/Pr0fess0r-99>
+
 import threading
 import base64
 import hashlib
