@@ -1,6 +1,6 @@
 import requests
 import json
-
+from Telethroid.types import Msg
 
 class Filter:
     def __init__(self):
