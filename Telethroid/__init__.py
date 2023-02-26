@@ -9,6 +9,8 @@ import Telethroid.filters
 import Telethroid.types
 import Telethroid.errors
 
+from Telethroid.client import TelegramBotClient
+
 def started_telethroid():
   print(
     "Telethroid Successfully Installed" + "\n"
