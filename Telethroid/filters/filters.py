@@ -1,8 +1,8 @@
-import requests
 import json
+import requests
 from Telethroid.types import Msg
 
-class Filter:
+class Filters:
     def __init__(self):
         pass
 
@@ -186,4 +186,3 @@ class Filter:
                 return False
             return parts[0][len(prefix):] == cmd
         return func
-
