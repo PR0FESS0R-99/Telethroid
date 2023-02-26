@@ -107,15 +107,25 @@ class Filter:
         return message.forward_from_chat or message.forward_from_message_id or message.forward_sender_name
 
     @staticmethod
-    async def pymongo(message, db, collection):
-        """PyMongo filter"""
-        if db and collection:
-            client = pymongo.MongoClient()
-            db = client[db]
+    async def database(message, library_name="motor", import_library=True, db_url=True, db_name="Telethroid", collection="Telethroid"):
+        """Database filter""" 
+        if import_library == True:
+            print("Import Pymongo Or Motor Asyncio Database Library")
+            return
+
+        if library_name.lower() == "pymongo":
+            client = import_library.MongoClient(db_url)
+            db = client[db_name]
             collection = db[collection]
             return collection.find_one({"_id": message.chat.id}) is not None
+
+        elif library_name.lower() == "motor":
+            client = import_library.AsyncIOMotorClient(db_url)
+            db = client[db_name]
+            collection = db[collection]
+            return await collection.find_one({"_id": message.chat.id}) is not None
         else:
-            raise ValueError("Please provide the database and collection names")
+            raise ValueError("Sorry Invalid Database Name")
 
     @staticmethod
     async def chat_title(message, title):
