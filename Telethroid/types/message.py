@@ -16,12 +16,14 @@ class Msg:
         out.write(int.to_bytes(message.chat_id, length=4, byteorder='little', signed=True))
         out.write(message.text.encode('utf-8'))
 
+
     @staticmethod
     def read(data: bytes) -> 'Msg':
-        message_id = int.from_bytes(data[0:4], byteorder='little', signed=True)
+        message_id = int.from_bytes(data[:4], byteorder='little', signed=True)
         chat_id = int.from_bytes(data[4:8], byteorder='little', signed=True)
         text = data[8:].decode('utf-8')
         return Msg(message_id, chat_id, text)
+
 
     @staticmethod
     def import_(data: Any) -> 'Msg':
