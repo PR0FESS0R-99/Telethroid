@@ -9,15 +9,29 @@ import json
 import time
 import urllib.parse
 import urllib.request
+import platform
 
+class TelethroidClientTool(object):
+    DEVICE_MODEL = f"{platform.python_implementation()} {platform.python_version()}"
 
 class TelethroidClient:
-    def __init__(self, api_id: int, api_hash: str, bot_token: str, string_session: str, phone_code: str, device_model: str):
+    "Telethroid Client"
+
+    def __init__(
+        self,
+        api_id: int = None,
+        api_hash: str = None,
+        bot_token: str = None,
+        string_session: str = None,
+        phone_number: str = None,
+        device_model: str= TelethroidClientTool.DEVICE_MODEL
+    ):
+
         self.api_id = api_id
         self.api_hash = api_hash
         self.bot_token = bot_token
         self.string_session = string_session
-        self.phone_code = phone_code
+        self.phone_code = phone_number
         self.device_model = device_model
 
         self.lock = threading.Lock()
