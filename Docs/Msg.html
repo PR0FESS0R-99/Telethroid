@@ -1,0 +1,96 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="path/to/styles.css">
+    
+    <title>Msg Class Documentation</title>
+    <style>
+      
+      body {
+          background-color:pink;
+      }
+      /* Dark mode button styles */
+      .dark-mode {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        z-index: 9999;
+      }
+      .dark-mode button {
+        font-size: 1rem;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 5px;
+        background-color: #333;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .dark-mode button:hover {
+        background-color: #555;
+      }
+      .dark-mode img {
+        width: 20px;
+        height: auto;
+        margin-right: 0.5rem;
+      }
+      /* Dark mode styles */
+      body.dark {
+        background-color: black;
+        color: #fff;
+      }
+</style>
+
+  </head>
+  <body>
+    <h1>Msg Class Documentation</h1>
+    <p>The <code>Msg</code> class is used to represent a message in a chat.</p>
+    <h2>Constructor</h2>
+    <p>The constructor takes three arguments:</p>
+    <ul>
+      <li><code>message_id</code>: an <code>int</code> representing the ID of the message.</li>
+      <li><code>chat_id</code>: an <code>int</code> representing the ID of the chat the message was sent in.</li>
+      <li><code>text</code>: a <code>str</code> representing the text of the message.</li>
+    </ul>
+    <p>Example:</p>
+    <pre><code>msg = Msg(123, 456, "Hello, world!")</code></pre>
+    <h2>Methods</h2>
+    <h3><code>__str__()</code></h3>
+    <p>Returns a string representation of the message in the format "Message &lt;message_id&gt; in chat &lt;chat_id&gt;: &lt;text&gt;".</p>
+    <h3><code>write(out: BytesIO, message: 'Msg')</code></h3>
+    <p>Writes the message to a <code>BytesIO</code> object. The <code>message</code> parameter should be an instance of the <code>Msg</code> class.</p>
+    <h3><code>read(data: bytes) -&gt; 'Msg'</code></h3>
+    <p>Reads a message from a bytes object and returns a new instance of the <code>Msg</code> class. The <code>data</code> parameter should be a bytes object containing the message data.</p>
+    <h3><code>import_(data: Any) -&gt; 'Msg'</code></h3>
+    <p>Imports a message from either a bytes object or a dictionary object and returns a new instance of the <code>Msg</code> class. The <code>data</code> parameter should be either a bytes object or a dictionary object with keys "message_id", "chat_id", and "text".</p>
+    <h2>Example Usage</h2>
+    <p>Here's an example of how to use the <code>Msg</code> class:</p>
+    <pre><code>from io import BytesIO
+
+# Create a new message
+msg = Msg(123, 456, "Hello,
+
+
+<script>
+function toggleDarkMode() {
+  const body = document.body;
+  const isDark = body.classList.contains('dark');
+  if (isDark) {
+    body.classList.remove('dark');
+  } else {
+    body.classList.add('dark');
+  }
+}
+
+const button = document.createElement('button');
+button.textContent = 'Dark Mode';
+button.addEventListener('click', toggleDarkMode);
+
+const container = document.createElement('div');
+container.classList.add('dark-mode');
+container.appendChild(button);
+
+document.body.appendChild(container);
+</script>
