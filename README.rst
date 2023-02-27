@@ -4,7 +4,7 @@ Elegant, modern and asynchronous Telegram Bot framework in Python for users and 
 
 # Installing
 
-.. code:: ste
+.. code:: str
 
 pip install Telethroid
 
