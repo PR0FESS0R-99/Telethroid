@@ -1,6 +1,6 @@
 import json
 import requests
-from Telethroid.types import Msg
+from Telethroid.types import Msg, InlineButtons, ReplyMarkup
 
 class Filters:
     def __init__(self):
@@ -172,6 +172,38 @@ class Filters:
     def delete_channel(message):
         """Filters updates where a channel has been deleted."""
         return message.chat and message.chat.type == 'channel' and message.delete_chat_photo
+    
+    @staticmethod
+    def incoming(func):
+        def wrapper(update):
+            if update['message'] is not None:
+                return func(update)
+            return False
+        return wrapper
+    
+    @staticmethod
+    def outgoing(func):
+        def wrapper(update):
+            if update['message'] is not None and update['message']['outgoing'] == True:
+                return func(update)
+            return False
+        return wrapper
+    
+    @staticmethod
+    def inlineButtons(func):
+        def wrapper(update):
+            if update['callback_query'] is not None and update['callback_query']['message']['reply_markup']['inline_keyboard'] is not None:
+                return func(update)
+            return False
+        return wrapper
+    
+    @staticmethod
+    def inlineMarkups(func):
+        def wrapper(update):
+            if update['message'] is not None and update['message']['reply_markup'] is not None and update['message']['reply_markup']['inline_keyboard'] is not None:
+                return func(update)
+            return False
+        return wrapper
 
     @staticmethod
     def command(cmd: str, prefix: str = '/') -> bool:
