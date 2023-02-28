@@ -14,7 +14,6 @@ import time
 
 # Telethroid
 from Telethroid.types.message import Msg
-from Telethroid.filters.filters import Filters
 
 class TelethroidClient:
     """
