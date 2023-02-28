@@ -1,6 +1,6 @@
 import json
 import requests
-from Telethroid.types.message import Msg,
+from Telethroid.types.message import Msg
 from Telethroid.types.inlinebuttons import InlineButtons
 from Telethroid.types.reply_markup import ReplyMarkup
 
