@@ -1,0 +1,220 @@
+<!DOCTYPE html> <html> <head> 	<meta charset="utf-8"> 
+	<title>TelethroidClient Documentation</title> 
+	<style> 		
+ body { 			
+    font-family: Arial, sans-serif; 		
+ }
+ h1, h2, h3 {
+		color: #006699;
+	}
+
+	h1 {
+		font-size: 36px;
+   text-align: center;
+   background-color: pink;
+   border: ridge;
+   border-color: red;
+	}
+
+	h2 {
+		font-size: 28px;
+	}
+
+	h3 {
+		font-size: 22px;
+	}
+
+	p {
+		font-size: 18px;
+		line-height: 1.5;
+	}
+
+	code {
+		font-family: Consolas, monospace;
+		background-color: #f0f0f0;
+		padding: 2px;
+		border-radius: 3px;
+	}
+
+	pre {
+		font-family: Consolas, monospace;
+		background-color: #f0f0f0;
+		padding: 10px;
+		border-radius: 3px;
+		white-space: pre-wrap;
+		word-wrap: break-word;
+		line-height: 1.5;
+	}
+
+	table {
+		border-collapse: collapse;
+		margin: 10px 0;
+	}
+
+	th, td {
+		border: 1px solid #ddd;
+		padding: 8px;
+	}
+
+	th {
+		background-color: #f2f2f2;
+	}
+
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+ header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: left;
+  padding: 10px;
+}
+
+header img {
+  height: 50px;
+}
+
+</style>
+   <style>
+        /* Add some style to the copy button */
+        .copy-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Change the style of the button when the user hovers over it */
+        .copy-btn:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+        <script>
+        function copyCodeSnippet() {
+            /* Get the code snippet element */
+            const codeSnippet = document.getElementById("code-snippet");
+
+            /* Create a range object and select the text inside the code snippet element */
+            const range = document.createRange();
+            range.selectNode(codeSnippet);
+            window.getSelection().removeAllRanges();
+            window.getSelection().addRange(range);
+
+            /* Copy the selected text to the clipboard */
+            document.execCommand("copy");
+
+            /* Deselect the text */
+            window.getSelection().removeAllRanges();
+
+            /* Change the text on the button to "Copied!" for a short period of time */
+            const copyBtn = document.querySelector(".copy-btn");
+            copyBtn.innerHTML = "successfully copied!";
+            setTimeout(function() {
+                copyBtn.innerHTML = "Copy";
+            }, 1000);
+        }
+    </script>
+
+
+</head>
+<header>
+    <img src="https://te.legra.ph/file/aed4711cfce9a1b103c16.jpg" alt="Your Logo">
+</header> 
+<body> 	
+    <div class="container"> 		
+    <h1>TelethroidClient Documentation</h1>
+    	<h2>Overview</h2>
+
+	<p>The TelethroidClient class is a client for interacting with the Telegram Bot API. It allows you to send messages, get updates, and start polling for new updates.</p>
+
+	<h2>Usage</h2>
+
+	<p>To use the TelethroidClient class, you first need to import it:</p>
+
+	<pre><code id="code-snippet">from Telethroid import TelethroidClient</code></pre>
+
+    <!-- Add a button to copy the code snippet -->
+    <button class="copy-btn" onclick="copyCodeSnippet()">Copy</button>
+
+
+	<p>Then, you can create a new instance of the TelethroidClient class by passing in your Telegram bot token, API ID, and API hash:</p>
+
+	<pre><code>client = TelethroidClient(token, api_id, api_hash)</code></pre>
+
+	<p>You can then use the various methods provided by the TelethroidClient class to interact with the Telegram Bot API.</p>
+
+	<h2>Methods</h2>
+
+	<p>The TelethroidClient class provides the following methods:</p>
+
+	<table>
+		<thead>
+			<tr>
+				<th>Method</th>
+				<th>Description</th>
+				<th>Parameters</th>
+				<th>Returns</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td><code>send_message(chat_id, text)</code></td>
+				<td>Sends a message to the specified chat.</td>
+				<td>
+					<ul>
+						<li><code>chat_id</code> (int): The ID of the chat to send the message to.</li>
+						<li><code>text</code> (str): The text of the message to send.</li>
+					</ul>
+				</td>
+				<td>A dictionary representing the response from the Telegram API.</td>
+			</tr>
+			<tr>
+				<td><code>get_updates()</code></td>
+     <td>Retrieves new updates from the Telegram API.</td>
+     			<td>No parameters.</td>
+     			<td>A list of updates from the Telegram API.</td>
+		</tr>
+		<tr>
+			<td><code>start_polling(handler)</code></td>
+			<td>Continuously polls the Telegram API for updates and calls a handler function for each update.</td>
+			<td>
+				<ul>
+					<li><code>handler</code> (function): A function that will be called with each new update.</li>
+				</ul>
+			</td>
+			<td>No return value.</td>
+		</tr>
+		<tr>
+			<td><code>run()</code></td>
+			<td>Starts the bot client.</td>
+			<td>No parameters.</td>
+			<td>No return value.</td>
+		</tr>
+	</tbody>
+</table>
+
+<h2>Examples</h2>
+
+<p>Here's an example of how to use the TelethroidClient class to send a message to a chat:</p>
+
+<pre><code>client.send_message(chat_id=123456789, text="Hello, world!")</code></pre>
+
+<p>Here's an example of how to use the TelethroidClient class to start polling for updates:</p>
+
+<pre><code>def handle_update(update):
+message = update['message']
+chat_id = message['chat']['id']
+text = message['text']
+client.send_message(chat_id=chat_id, text=text)
+client.start_polling(handle_update)</code></pre>
+
+<p>Here's an example of how to use the TelethroidClient class to start the bot client:</p>
+
+<pre><code>client.run()</code></pre>
+
+
