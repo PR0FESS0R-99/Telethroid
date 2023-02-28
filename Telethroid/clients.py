@@ -13,6 +13,7 @@ import json
 import time
 
 # Telethroid
+from Telethroid.filters import Filters
 from Telethroid.types.message import Msg
 
 class TelethroidClient:
@@ -114,6 +115,6 @@ class TelethroidClient:
         """
         if "message" in update:
             message = message.Msg(update["message"])
-            if filters.command("start")(message):
+            if Filters.command("start")(message):
                 self.send_message(
                     message.chat_id, "Hello, World!")
