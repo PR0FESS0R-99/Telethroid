@@ -11,8 +11,10 @@ import platform
 import requests
 import json
 import time
-from Telethroid.types import Msg
-from Telethroid.filters import Filters
+
+# Telethroid
+from Telethroid.types.message import Msg
+from Telethroid.filters.filters import Filters
 
 class TelethroidClient:
     """
