@@ -13,7 +13,7 @@ import json
 import time
 
 # Telethroid
-from Telethroid.filters import Filters
+from Telethroid.filters.filters import Filters
 from Telethroid.types.message import Msg
 
 class TelethroidClient:
