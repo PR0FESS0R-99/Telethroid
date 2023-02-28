@@ -1,0 +1,37 @@
+/* Set font family and background color for the whole document */
+body {
+  font-family: Arial, sans-serif;
+  background-color: pink;
+}
+
+/* Style the heading */
+h1 {
+  color: #333;
+  font-size: 2em;
+  text-align: center;
+}
+
+/* Style the paragraphs */
+p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+/* Style the code block */
+pre {
+  background-color: #ddd;
+  padding: 10px;
+  overflow-x: auto;
+}
+
+/* Style the unordered list */
+ul {
+  list-style: square;
+  margin-left: 20px;
+}
+
+/* Style the list items */
+li {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
