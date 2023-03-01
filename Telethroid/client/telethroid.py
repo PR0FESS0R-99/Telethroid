@@ -65,7 +65,11 @@ class TelethroidClient:
         """
         url = f"{self.base_url}getUpdates"
         params = {"offset": self.last_update_id + 1, "timeout": 30}
+        print(f'🔹1) {params}')
         response = requests.get(url, params=params)
+        print(f'🔹2) {response}')
+        a = json.loads(response.content)
+        print(f'🔹3) {a}')
         return json.loads(response.content)
 
     def start_polling(self, handler):
@@ -76,7 +80,7 @@ class TelethroidClient:
         """
         while True:
             try:
-                updates = self.get_updates()
+                updates = self.get_updates()               
                 if len(updates) > 0:
                     self.last_update_id = updates[-1]['update_id']
                     for update in updates:
