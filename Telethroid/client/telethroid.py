@@ -71,21 +71,22 @@ class TelethroidClient:
         return json.loads(response.content)
 
     def start_polling(self, handler):
-        """
-        Continuously polls the Telegram API for updates and calls a handler function for each update.
-        Parameters:
-            handler (function): A function that will be called with each new update.
-        """
-        while True:
-            try:
-                updates = self.get_updates()                          
-                if len(updates) > 0:
-                    self.last_update_id = updates[-1]['update_id']                
-                    for update in updates:
+    """
+    Continuously polls the Telegram API for updates and calls a handler function for each update.
+    Parameters:
+        handler (function): A function that will be called with each new update.
+    """
+    while True:
+        try:
+            updates = self.get_updates()
+            if len(updates) > 0:
+                self.last_update_id = updates[0]['update_id']
+                for update in updates:
+                    if "message" in update:
                         handler(update)
-            except Exception as e:
-                print(f"Error: {e}")
-            time.sleep(1)
+        except Exception as e:
+            print(f"Error: {e}")
+        time.sleep(1)
 
     def run(self):
         """
