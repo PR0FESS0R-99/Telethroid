@@ -67,7 +67,6 @@ class TelethroidClient:
         url = f"{self.base_url}getUpdates"
         params = {"offset": self.last_update_id + 1, "timeout": 30}
         response = requests.get(url, params=params)
-        print(json.loads(response.content))
         return json.loads(response.content)
 
     def start_polling(self, handler):
@@ -80,7 +79,7 @@ class TelethroidClient:
             try:
                 updates = self.get_updates()                          
                 if len(updates) > 0:
-                    # self.last_update_id = updates[-1]['update_id']                
+                    self.last_update_id = updates[0]['update_id']                
                     for update in updates:
                         handler(update)
             except Exception as e:
