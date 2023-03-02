@@ -78,7 +78,7 @@ class TelethroidClient:
             try:
                 num = 0
                 updates = self.get_updates()
-                print(f'🔹0) {updates}')          
+                print(len(updates))          
                 if len(updates) > 0:
                     self.last_update_id = updates[-1]['update_id']
                     print(f'🔹1) {self.last_update_id}')
