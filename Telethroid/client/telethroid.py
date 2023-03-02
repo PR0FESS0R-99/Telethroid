@@ -66,6 +66,7 @@ class TelethroidClient:
         url = f"{self.base_url}getUpdates"
         params = {"offset": self.last_update_id + 1, "timeout": 30}
         response = requests.get(url, params=params)
+        print(json.loads(response.content))
         return json.loads(response.content)
 
     def start_polling(self, handler):
